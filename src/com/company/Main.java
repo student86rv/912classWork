@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -51,7 +53,9 @@ public class Main {
         users.add(new User(2, "Petr", "Petrov", "petrov@gmail.com", new Date()));
         users.add(new User(2, "Sidor", "Sidorov", "sidorov@gmail.com", new Date()));
 
-        users.stream().map((usr) -> new UserDto(usr.firstName, usr.lastName, usr.email)).forEach(System.out::println);
+        Stream<UserDto> userStream = users.stream().map((usr) -> new UserDto(usr.firstName, usr.lastName, usr.email));
 
+        List<UserDto> userDTOlist = userStream.collect(Collectors.toList());
+        System.out.println(userDTOlist);
     }
 }
