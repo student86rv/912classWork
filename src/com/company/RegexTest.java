@@ -39,22 +39,6 @@ public class RegexTest {
 //        System.out.println(emailValid.isValid("student86rv@gmail.com"));
 //        System.out.println(phoneValid.isValid("+380(67)777-7-777"));
 
-        List<String> list = new ArrayList<>();
-        list.add("enuHFGVBnewovgfuwbrHNVI");
-        list.add("qwertyuiopasdf");
-        list.add("rghbjud");
-        list.add("rd");
 
-//        list.stream().filter((str) -> str.length() >= 10).forEach(System.out::println);
-
-        List<User> users = new ArrayList<>();
-        users.add(new User(1, "Ivan", "Ivanov", "ivanov@gmail.com", new Date()));
-        users.add(new User(2, "Petr", "Petrov", "petrov@gmail.com", new Date()));
-        users.add(new User(2, "Sidor", "Sidorov", "sidorov@gmail.com", new Date()));
-
-        Stream<UserDto> userStream = users.stream().map((usr) -> new UserDto(usr.firstName, usr.lastName, usr.email));
-
-        List<UserDto> userDTOlist = userStream.collect(Collectors.toList());
-        System.out.println(userDTOlist);
     }
 }
