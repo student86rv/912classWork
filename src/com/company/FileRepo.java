@@ -4,10 +4,12 @@ import java.io.*;
 
 public class FileRepo {
 
-    public String readFile() {
+    //String fileName;
+
+    public String readFile(String fileName) {
         StringBuilder sb = new StringBuilder();
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("test.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String currentLine;
             while ((currentLine = reader.readLine()) != null){
                 sb.append(currentLine);
@@ -19,9 +21,9 @@ public class FileRepo {
         return sb.toString();
     }
 
-    public void writeFile(String input) {
+    public void writeFile(String input, String fileName) {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
             writer.write(input);
             writer.close();
         } catch (IOException e) {

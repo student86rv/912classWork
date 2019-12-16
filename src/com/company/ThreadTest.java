@@ -2,9 +2,9 @@ package com.company;
 
 import java.util.Scanner;
 
-public class ThreadTest {
+//public class ThreadTest {
 
-    public static void main(String[] args) {
+   // public static void main(String[] args) {
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("Seconds to sleep:");
@@ -18,30 +18,30 @@ public class ThreadTest {
 //                e.printStackTrace();
 //            }
 //        }
-        FileRepo repo = new FileRepo();
-
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                repo.writeFile("qwerty");
-            }
-        });
-
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(repo.readFile());
-            }
-        });
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                repo.writeFile("asdfg");;
-            }
-        });
-
-        thread1.run();
-        thread2.run();
-        thread3.run();
-    }
-}
+//        FileRepo repo = new FileRepo();
+//
+//        Thread thread1 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                repo.writeFile("qwerty");
+//            }
+//        });
+//
+//        Thread thread2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(repo.readFile());
+//            }
+//        });
+//        Thread thread3 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                repo.writeFile("asdfg");;
+//            }
+//        });
+//
+//        thread1.run();
+//        thread2.run();
+//        thread3.run();
+//    }
+//}
