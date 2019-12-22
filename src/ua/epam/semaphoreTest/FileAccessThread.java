@@ -1,14 +1,19 @@
-package com.company;
+package ua.epam.semaphoreTest;
+
+import ua.epam.FileRepo;
 
 import java.util.concurrent.Semaphore;
 
-public class IncThread implements Runnable{
+//Use FileRepo class!!!
+public class FileAccessThread implements Runnable{
 
     String name;
+    String fileName;
     Semaphore sem;
 
-    public IncThread(String name, Semaphore sem) {
+    public FileAccessThread(String name, String fileName, Semaphore sem) {
         this.name = name;
+        this.fileName = fileName;
         this.sem = sem;
         new Thread(this).start();
     }
@@ -20,11 +25,14 @@ public class IncThread implements Runnable{
             System.out.println(name + "is waiting for permit");
             sem.acquire();
             System.out.println(name + " gets a permit");
-            for (int i = 0; i < 5; i++) {
-                Shared.count++;
-                System.out.println(name + ":" + Shared.count);
-                Thread.sleep(10);
-            }
+
+            FileRepo fileRepo = new FileRepo();
+
+            String writeToFile = fileRepo.readFile("finalFile.txt") + " " + fileRepo.readFile(fileName);
+
+            fileRepo.writeFile(writeToFile, "finalFile.txt");
+
+
         } catch (InterruptedException e) {
             System.out.println(e);
         }

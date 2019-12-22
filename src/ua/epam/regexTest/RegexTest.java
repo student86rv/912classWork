@@ -1,12 +1,7 @@
-package com.company;
+package ua.epam.regexTest;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class RegexTest {
     public static void main(String[] args) {
@@ -36,9 +31,7 @@ public class RegexTest {
             return matcher.matches();
         };
 
-//        System.out.println(emailValid.isValid("student86rv@gmail.com"));
-//        System.out.println(phoneValid.isValid("+380(67)777-7-777"));
-
-
+        System.out.println("Email valid: " + emailValid.isValid("student86rv@gmail.com"));
+        System.out.println("Rhone valid: " + phoneValid.isValid("+380(67)777-7-777"));
     }
 }

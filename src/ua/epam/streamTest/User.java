@@ -1,4 +1,4 @@
-package com.company;
+package ua.epam.streamTest;
 
 import java.util.Date;
 

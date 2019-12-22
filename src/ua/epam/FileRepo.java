@@ -1,10 +1,9 @@
-package com.company;
+package ua.epam;
 
 import java.io.*;
 
+//Used by semaphoreTest app, MultiThreadTest class!!!
 public class FileRepo {
-
-    //String fileName;
 
     public String readFile(String fileName) {
         StringBuilder sb = new StringBuilder();

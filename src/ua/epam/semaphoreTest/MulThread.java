@@ -1,4 +1,4 @@
-package com.company;
+package ua.epam.semaphoreTest;
 
 import java.util.concurrent.Semaphore;
 
